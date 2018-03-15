@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.allure.thirdlogin">
+
+<application
+    android:allowBackup="true"
+    android:label="@string/app_name"
+    android:supportsRtl="true">
+
+    <!--微信 start-->
+    <activity
+        android:name=".weixin.WXCallbackActivity"
+        android:exported="true"
+        android:launchMode="singleTop" >
+    </activity>
+    <activity-alias
+        android:name="${applicationId}.wxapi.WXEntryActivity"
+        android:exported="true"
+        android:targetActivity=".weixin.WXCallbackActivity"/>
+    <!--微信 end-->
+
+
+
+    <!--QQ start-->
+    <!--<activity-->
+        <!--android:name="com.tencent.tauth.AuthActivity"-->
+        <!--android:noHistory="true"-->
+        <!--android:launchMode="singleTask" >-->
+        <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.VIEW" />-->
+            <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--<category android:name="android.intent.category.BROWSABLE" />-->
+            <!--<data android:scheme="tencent${QQid}" /> &lt;!&ndash;1111111改为你的qq appid&ndash;&gt;-->
+        <!--</intent-filter>-->
+    <!--</activity>-->
+    <!--<activity-->
+        <!--android:name="com.tencent.connect.common.AssistActivity"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+    <!--QQ end-->
+</application>
+
+</manifest>
